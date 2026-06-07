@@ -6,15 +6,13 @@
   --color-border: #e2e8f0;
   --font-primary: 'Inter', sans-serif;
   --max-width: 1200px;
-
-  /* Hero-specific design tokens */
+ /* Hero section */
   --color-brand-light: rgba(0, 74, 198, 0.05);
   --color-text-main: #0f172a;
   --color-text-sub: #1e293b;
   --color-text-bio: #475569;
   --color-badge-bg: #e0ebff;
-  
-  /* Main content section additions */
+  /* Main section  */
   --color-brand-hover: #003db3;
   --color-text-card-muted: #64748b;
   --color-bg-card: #ffffff;
@@ -112,8 +110,7 @@ body {
   color: #1e293b;
 }
 
-/* Hero Card Section */
-
+/* Hero section */
 .hero-wrapper {
   width: 100%;
   padding: 40px 24px; 
@@ -154,12 +151,7 @@ body {
   align-items: center;
   gap: 48px;
   width: 100%;
-  
-  /* This forces the container to be exactly 354px tall when content fits, */
-  /* but lets it "hug" and expand if the text needs more room on smaller screens */
   min-height: 354px; 
-  
-  /* Even padding distribution so contents stay vertically centered */
   padding: 40px; 
 }
 
@@ -274,8 +266,8 @@ body {
     flex-direction: column;
     text-align: center;
     align-items: center;
-    padding: 40px 24px;
-    gap: 32px;
+    padding: 32px 20px;
+    gap: 24px;
   }
 
   .hero-content {
@@ -606,10 +598,71 @@ body {
   }
 }
 
+@media (max-width: 768px) {
+  .navbar-container {
+    height: auto;
+    min-height: 64px;
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+  }
+  
+  .nav-menu {
+    width: 100%;
+    justify-content: center;
+    gap: 20px;
+    order: 3;
+    padding-top: 8px;
+  }
+
+  .hero-wrapper {
+    padding: 24px 16px;
+  }
+
+  .profile-layout-wrapper {
+    padding: 0 16px 40px 16px;
+  }
+}
+
 @media (max-width: 576px) {
   .content-card, 
   .analytics-card-blue {
-    padding: 24px;
+    padding: 24px 16px;
+  }
+  
+  .profile-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .hero-name {
+    font-size: 28px;
+  }
+
+  .hero-title {
+    font-size: 18px;
+  }
+
+  .hero-bio {
+    font-size: 15px;
+  }
+
+  .hero-actions {
+    width: 100%;
+    gap: 12px;
+  }
+  
+  .btn.btn-primary {
+    flex: 1 1 100%;
+  }
+
+  .btn-icon-outline {
+    flex: 1 1 auto;
+  }
+
+  .analytics-metric {
+    font-size: 36px;
   }
 }
 
@@ -619,7 +672,7 @@ body {
   border-top: 1px solid var(--color-border);
   width: 100%;
   padding: 24px 40px;
-  margin-top: auto; /* Pushes footer to bottom if page content is short */
+  margin-top: auto;
 }
 
 .footer-container {
